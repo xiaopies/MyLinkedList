@@ -7,10 +7,10 @@ public class Node{
     prev = null;
   }
 
-  public String getValue(){
+  public String getData(){
     return data;
   }
-  public void setValue(String a){
+  public void setData(String a){
     data = a;
   }
   public Node getNext(){
