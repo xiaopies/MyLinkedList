@@ -26,7 +26,6 @@ public class MyLinkedList{
       size ++;
       return true;
     }
-
   }
   public void add(int index, String value){
     int counter = 0;
@@ -45,7 +44,6 @@ public class MyLinkedList{
     }
     nom.setNext(a);
     a.setPrev(nom);
-
   }
   public String get(int index){
     int counter = 0;
@@ -55,9 +53,30 @@ public class MyLinkedList{
       counter++;
     }
     return a.getData();
-
   }
-  // public String set(int index, String value);
-  // public String toString();
+  public String set(int index, String value){
+    int counter = 0;
+    Node a = start;
+    while (counter != index){
+      a = a.getNext();
+      counter++;
+    }
+    a.setData(value);
+    return value;
+  }
+  public String toString(){
+    String s = "[";
+    int counter = 0;
+    Node a = start;
+    while (counter < size){
+      s+= a.getData();
+      a= a.getNext();
+      counter++;
+      if (counter <size){
+        s += ", ";
+      }
+    }
+    return (s + "]");
+  }
 //Any helper method that returns a Node object MUST BE PRIVATE!
 }

@@ -7,7 +7,6 @@ public class Tester{
     hi.add("a");
     hi.add("whole");
     hi.add("!");
-    
     hi.add(5, "lot");
     System.out.println(hi.get(0));
     System.out.println(hi.get(1));
@@ -16,8 +15,16 @@ public class Tester{
     System.out.println(hi.get(4));
     System.out.println(hi.get(5));
     System.out.println(hi.get(6));
+    hi.set(5, "watermelon");
+    System.out.println(hi.get(0));
+    System.out.println(hi.get(1));
+    System.out.println(hi.get(2));
+    System.out.println(hi.get(3));
+    System.out.println(hi.get(4));
+    System.out.println(hi.get(5));
+    System.out.println(hi.get(6));
+    System.out.println(hi.toString());
 
-    // System.out.println(hi.getStart());
   }
 
 }
