@@ -24,7 +24,8 @@ public class Tester{
     System.out.println(hi.get(5));
     System.out.println(hi.get(6));
     System.out.println(hi.toString());
-    System.out.println(hi.remove(5));
+    System.out.println(hi.remove(6));
+    System.out.println(hi.remove(0));
     System.out.println(hi.toString());
     MyLinkedList words = new MyLinkedList();
     words.add(0+"");

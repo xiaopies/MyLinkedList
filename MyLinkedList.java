@@ -88,6 +88,7 @@ public class MyLinkedList{
     return (s + "]");
   }
   public String remove (int index){
+    String s= get(index);
     if (index<0 || index >=size){
       throw new IndexOutOfBoundsException(index + "index out of range");
     }
@@ -101,7 +102,9 @@ public class MyLinkedList{
       a.getPrev().setNext(a.getNext());
     }
     else{
-      if (size>1) start.getNext().setPrev(null);
+      if (size>1){
+         start.getNext().setPrev(null);
+      }
       start = start.getNext();
     }
     if (index<size-1){
@@ -110,12 +113,16 @@ public class MyLinkedList{
     else{
       if (size>1){
         end.getPrev().setNext(null);
-        end = end.getPrev();
+      }
+      end = end.getPrev();
       }
 
-    }
+
+
     size --;
-    return get(index-1);
+
+    return s;
+
   }
   public void extend (MyLinkedList other){
     if (size==0) {
