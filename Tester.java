@@ -24,6 +24,29 @@ public class Tester{
     System.out.println(hi.get(5));
     System.out.println(hi.get(6));
     System.out.println(hi.toString());
+    MyLinkedList words = new MyLinkedList();
+    words.add(0+"");
+    words.add(1+"");
+    words.add(2+"");
+    words.add(3+"");
+    words.add(4+"");
+    words.add(5+"");
+    words.add(6+"");
+    words.add(7+"");
+    words.add(8+"");
+    words.add(9+"");
+    words.add(0,0+"x");
+    words.add(2,1+"x");
+    words.add(4,2+"x");
+    words.add(6,3+"x");
+    words.add(8,4+"x");
+    words.add(10,5+"x");
+    words.add(12,6+"x");
+    words.add(14,7+"x");
+    words.add(16,8+"x");
+    words.add(18,9+"x");
+    System.out.println(words.toString());
+
 
   }
 

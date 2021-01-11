@@ -115,9 +115,23 @@ public class MyLinkedList{
       size --;
     }
     return get(index);
-
-
   }
+  public void extend (MyLinkedList other){
+    if (size==0) {
+         start = other.start;
+    } else if (other.size>0) {
+         end.setNext(other.start);
+         other.start.setPrev(end);
+    }
+    end = other.end;
+   size += other.size;
+   other.start = null;
+   other.end = null;
+   other.size = 0;
+ }
+
+  
+
 
 //Any helper method that returns a Node object MUST BE PRIVATE!
 }
