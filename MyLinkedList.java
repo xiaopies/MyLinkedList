@@ -31,25 +31,29 @@ public class MyLinkedList{
     int counter = 0;
     Node a = start;
     Node nom = new Node(value);
-    if (index<0 || index >=size){
+    if (index<0 || index >size){
       throw new IndexOutOfBoundsException();
     }
     else{
     if (size ==index){
-      add(value);
+        add(value);
+      }
+      while (counter != index){
+        a = a.getNext();
+        counter++;
+      }
+      if (counter !=0){
+        nom.setPrev(a.getPrev());
+        a.getPrev().setNext(nom);
+      }
+      nom.setNext(a);
+      a.setPrev(nom);
+      size ++;
     }
-    while (counter != index){
-      a = a.getNext();
-      counter++;
+    if (index ==0){
+      start = nom;
     }
-    if (counter !=0){
-      nom.setPrev(a.getPrev());
-      a.getPrev().setNext(nom);
-    }
-    nom.setNext(a);
-    a.setPrev(nom);
-    size ++;
-  }}
+  }
   public String get(int index){
     int counter = 0;
     Node a = start;
@@ -83,5 +87,37 @@ public class MyLinkedList{
     }
     return (s + "]");
   }
+  public String remove (int index){
+    if (index<0 || index >=size){
+      throw new IndexOutOfBoundsException(index + "index out of range");
+    }
+    int counter = 0;
+    Node a = start;
+    while (counter != index){
+      a = a.getNext();
+      counter++;
+    }
+    if (index>0){
+      a.getPrev().setNext(a.getNext());
+    }
+    else{
+      if (size>1) start.getNext().setPrev(null);
+      start = start.getNext();
+    }
+    if (index<size-1){
+      a.getNext().setPrev(a.getPrev());
+    }
+    else{
+      if (size>1){
+        end.getPrev().setNext(null);
+        end = end.getPrev();
+      }
+      size --;
+    }
+    return get(index);
+
+
+  }
+
 //Any helper method that returns a Node object MUST BE PRIVATE!
 }
