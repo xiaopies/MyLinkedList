@@ -112,9 +112,10 @@ public class MyLinkedList{
         end.getPrev().setNext(null);
         end = end.getPrev();
       }
-      size --;
+
     }
-    return get(index);
+    size --;
+    return get(index-1);
   }
   public void extend (MyLinkedList other){
     if (size==0) {
@@ -130,7 +131,7 @@ public class MyLinkedList{
    other.size = 0;
  }
 
-  
+
 
 
 //Any helper method that returns a Node object MUST BE PRIVATE!
